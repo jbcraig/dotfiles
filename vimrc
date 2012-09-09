@@ -1,35 +1,37 @@
-" turn off auto adding comments on next line
-" so you can cut and paste reliably
-" http://vimdoc.sourceforge.net/htmldoc/change.html#fo-table
-set fo=tcq
-set nocompatible
-set modeline
-" Set clipboard to OS X Clipboard
-set clipboard=unnamed
-syntax on
+filetype off
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 
-" set default comment color to cyan instead of darkblue
-" which is not very legible on a black background
-highlight comment ctermfg=cyan
-set bg=dark
-set tabstop=2
-set expandtab
-set softtabstop=2
-set shiftwidth=2
+let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
+let Tlist_WinWidth = 50
+map <F4> :TlistToggle<cr>
+set tags=./tags;
 
 vnoremap < <gv
 vnoremap > >gv
-
-" Fix saving files when you don't have root access
-cmap w!! %!sudo tee > /dev/null %
-
-highlight LiteralTabs ctermbg=darkgreen guibg=darkgreen
-match LiteralTabs /\s\  /
-highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
-match ExtraWhitespace /\s\+$/
-
-" Show me a ruler
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+syn on
+set et
+set background=dark
+let g:solarized_termcolors=16
+let g:solarized_diffmode="high"
+colorscheme solarized
 set ruler
+set number
+set modeline
+filetype plugin indent on
+syntax on
+set nocompatible
+set t_Co=256
+set showmode
+set encoding=utf-8
+set autoindent
+set backspace=indent,eol,start
+
+let mapleader = ","
 
 " Set up puppet manifest and spec options
 au BufRead,BufNewFile *.pp
@@ -40,3 +42,29 @@ au BufRead,BufNewFile *_spec.rb
 " Enable indentation matching for =>'s
 filetype plugin indent on
 
+set ignorecase
+set smartcase
+set gdefault
+set incsearch
+set showmatch
+set hlsearch
+nnoremap <leader><space> :noh<cr>
+
+set wrap
+set textwidth=79
+set formatoptions=qrn1
+
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+map <F2> :NERDTreeToggle<CR>
+cmap w!! w !sudo tee % > /dev/null
+
+:highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/
+
+set statusline+=%{SyntasticStatuslineFlag()}
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_jump=1
+let g:syntastic_auto_loc_list=1
