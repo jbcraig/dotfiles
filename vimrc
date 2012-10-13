@@ -18,7 +18,6 @@ set et
 set background=dark
 let g:solarized_termcolors=16
 let g:solarized_diffmode="high"
-colorscheme solarized
 set ruler
 set number
 set modeline
