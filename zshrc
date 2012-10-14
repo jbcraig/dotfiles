@@ -41,17 +41,6 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 
-#######
-# RVM #
-#######
-
-# Customize to your needs...
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
-
-# Add RVM to PATH
-PATH=$PATH:$HOME/.rvm/bin
-
-
 #########
 # Boxen #
 #########
