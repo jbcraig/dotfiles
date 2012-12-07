@@ -1,6 +1,6 @@
 ## Convenience aliases
 alias shell='ssh gary@shell.puppetlabs.com'
-alias master='ssh root@puppetmaster.puppetlabs.vm'
+alias master='ssh vagrant@master'
 alias stroke='/Applications/Utilities/Network\ Utility.app/Contents/Resources/stroke'
 alias gitx='/Applications/GitX.app/Contents/Resources/gitx'
 alias demo='ssh root@master.dc1.puppetlabs.net'
