@@ -9,18 +9,22 @@ set tags=./tags;
 
 vnoremap < <gv
 vnoremap > >gv
+
+" Smart Indent
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab
 syn on
 set et
+
 set background=dark
 let g:solarized_termcolors=16
 let g:solarized_diffmode="high"
 set ruler
 set number
 set modeline
+
 filetype plugin indent on
 syntax on
 set nocompatible
@@ -41,8 +45,12 @@ au BufRead,BufNewFile *_spec.rb
 " Enable indentation matching for =>'s
 filetype plugin indent on
 
+" Make /-style searches case-sensitive only if there is a capital letter in
+" " the search expression. *-style searches continue to be consistently
+" " case-sensitive.
 set ignorecase
 set smartcase
+
 set gdefault
 set incsearch
 set showmatch
@@ -58,6 +66,8 @@ nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
 map <F2> :NERDTreeToggle<CR>
+
+" Smart w!! incase you open a read-only file...
 cmap w!! w !sudo tee % > /dev/null
 
 :highlight ExtraWhitespace ctermbg=red guibg=red
