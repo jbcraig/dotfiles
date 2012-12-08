@@ -75,7 +75,8 @@ map <F2> :NERDTreeToggle<CR>
 " Smart w!! incase you open a read-only file...
 cmap w!! w !sudo tee % > /dev/null
 
-:highlight ExtraWhitespace ctermbg=red guibg=red
+highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+
 autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/
 
 set statusline+=%{SyntasticStatuslineFlag()}
