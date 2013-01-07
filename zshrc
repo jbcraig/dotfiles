@@ -1,54 +1,19 @@
-## Convenience aliases
-alias shell='ssh gary@shell.puppetlabs.com'
-alias master='ssh vagrant@master'
-alias stroke='/Applications/Utilities/Network\ Utility.app/Contents/Resources/stroke'
-alias gitx='/Applications/GitX.app/Contents/Resources/gitx'
-alias demo='ssh root@master.dc1.puppetlabs.net'
-alias beaker='ssh root@beaker.dc1.puppetlabs.net'
-alias animal='ssh root@animal.dc1.puppetlabs.net'
-alias puppet='sudo envpuppet puppet'
-alias facter='sudo envpuppet facter'
+zsh_cache=${HOME}/.zsh_cache
+vim_swap=${HOME}/.vimswp
 
+[[ ! -d $zsh_cache ]] && mkdir -p $zsh_cache
+[[ ! -d $vim_swap ]] && mkdir -p $vim_swap
 
-## ENVPUPPET Setup
-export ENVPUPPET_BASEDIR=~/src
-export EDITOR=vim
+# Quit bloating .zshrc with shit
+export MYZSH=$HOME/src/dotfiles/zsh
+for config_file ($MYZSH/**/*.zsh ) source $config_file
+for config_file ($MYZSH/functions/* ) source $config_file
 
-#Needed for rake tasks with rspec core
-export RUBYOPT=rubygems
+fpath=($MYZSH/functions $fpath)
 
-# Bind incremental history search
-bindkey "^r" history-incremental-search-backward
+autoload -U compinit && compinit
 
+if [[ -z $TMUX ]]; then
+  tmux attach -d
+fi
 
-#############
-# oh-my-zsh #
-#############
-
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
-
-# time that oh-my-zsh is loaded.
-ZSH_THEME="garylarizza"
-
-# Comment this out to disable weekly auto-update checks
- DISABLE_AUTO_UPDATE="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
-
-source $ZSH/oh-my-zsh.sh
-
-
-#########
-# Boxen #
-#########
-
-[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
-
-###############
-# VI Commands #
-###############
-
-set -o vi
