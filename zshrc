@@ -17,3 +17,6 @@ if [[ -z $TMUX ]]; then
   tmux attach -d
 fi
 
+# Set vim bindings
+set -o vi
+

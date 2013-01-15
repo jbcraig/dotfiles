@@ -8,6 +8,3 @@ export RUBYOPT=rubygems
 
 # Bind incremental history search
 bindkey "^r" history-incremental-search-backward
-
-# Set vim bindings
-set -o vi
