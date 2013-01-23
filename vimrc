@@ -88,3 +88,6 @@ let g:syntastic_auto_loc_list=1
 
 " A little longer history
 set history=1000
+
+" Replace insert pry breakpoint in insert mode
+imap !!p require 'pry' ; binding.pry
