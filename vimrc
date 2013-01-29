@@ -91,3 +91,6 @@ set history=1000
 
 " Replace insert pry breakpoint in insert mode
 imap !!p require 'pry' ; binding.pry
+
+" Easymotion
+let g:EasyMotion_leader_key = '\'
