@@ -9,6 +9,9 @@ alias animal='ssh root@animal.dc1.puppetlabs.net'
 alias puppet='sudo envpuppet puppet'
 alias facter='sudo envpuppet facter'
 
+# Tmux Stuff
+alias tmuxconnect='tmux attach -t 0'
+
 # Because
 alias fucking=sudo
 
