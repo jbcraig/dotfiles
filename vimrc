@@ -72,6 +72,7 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
+map Q gqap
 map <F2> :NERDTreeToggle<CR>
 
 " Smart w!! incase you open a read-only file...
