@@ -2,6 +2,7 @@
 export ENVPUPPET_BASEDIR=~/src
 export EDITOR=vim
 export PAGER=less
+export VAGRANT_DEFAULT_PROVIDER=virtualbox
 
 #Needed for rake tasks with rspec core
 export RUBYOPT=rubygems

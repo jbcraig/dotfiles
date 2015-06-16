@@ -6,8 +6,8 @@ alias gitx='/Applications/GitX.app/Contents/Resources/gitx'
 alias demo='ssh root@master.dc1.puppetlabs.net'
 alias beaker='ssh root@beaker.dc1.puppetlabs.net'
 alias animal='ssh root@animal.dc1.puppetlabs.net'
-alias puppet='sudo envpuppet puppet'
-alias facter='sudo envpuppet facter'
+#alias puppet='sudo envpuppet puppet'
+#alias facter='sudo envpuppet facter'
 
 # Tmux Stuff
 alias tmuxconnect='tmux attach -t 0'
@@ -17,6 +17,9 @@ alias fucking=sudo
 
 # Total disk usage for current folder
 alias use="/bin/ls -1A | tr '\n' '\0' | xargs -0 du -sk | sort -n"
+
+# Webserver
+alias webserver="python -m SimpleHTTPServer"
 
 # Bundler shortcuts
 alias b='bundle'
