@@ -6,7 +6,7 @@
 ZSH=$HOME/.oh-my-zsh
 
 # time that oh-my-zsh is loaded.
-ZSH_THEME="garylarizza"
+ZSH_THEME="jbcraig"
 
 # Comment this out to disable weekly auto-update checks
  DISABLE_AUTO_UPDATE="true"
